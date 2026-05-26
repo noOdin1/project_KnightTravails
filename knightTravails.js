@@ -41,6 +41,20 @@ const board = {
     console.log("Vertical direction: " + vertDir);
     console.log("Horizontal direction: " + horizDir);
   },
+  validPos: (array) => {
+    if (!Array.isArray(array)) {
+      return undefined;
+    }
+    let valid = false;
+    valid =
+      array[0] > chessboard[0].length - 1 || array[0] < 0
+        ? false
+        : array[1] > chessboard.length - 1 || array[1] < 0
+          ? false
+          : true;
+    return valid;
+  },
+
 };
 
 export { board };
