@@ -55,6 +55,26 @@ const board = {
     return valid;
   },
 
+  sameValues: (arr1, arr2) => {
+    if (arr1 === undefined || arr2 === undefined) {
+      return undefined;
+    }
+    if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+      return undefined;
+    }
+    if (arr1.length != arr2.length) {
+      return false;
+    }
+    let res = true;
+    arr1.map((x, idx) => {
+      if (x != arr2[idx]) {
+        res = false;
+      }
+    });
+    return res;
+    // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
+  },
+
 };
 
 export { board, dirTranslation, mapBoard };
