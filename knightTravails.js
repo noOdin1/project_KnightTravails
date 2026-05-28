@@ -57,4 +57,4 @@ const board = {
 
 };
 
-export { board };
+export { board, dirTranslation, mapBoard };
