@@ -57,3 +57,33 @@ describe("validPos() test group", () => {
     expect(board.validPos([8, 7])).toEqual(false);
   });
 });
+
+describe("Tests for sameValues()", () => {
+  test("No arguments", () => {
+    expect(board.sameValues()).toEqual(undefined);
+  });
+  test("With only 1 argument", () => {
+    expect(board.sameValues(4)).toEqual(undefined);
+  });
+  test("With only 1 argument, array with 2 elem", () => {
+    expect(board.sameValues([2, 2])).toEqual(undefined);
+  });
+  test("With 2 argument, 2 numbers", () => {
+    expect(board.sameValues(2, 3)).toEqual(undefined);
+  });
+  test("With 2 argument, 1 array with 2 elem and a number", () => {
+    expect(board.sameValues([2, 2], 4)).toEqual(undefined);
+  });
+  test("With 2 argument, 1 array with 2 elem and a number", () => {
+    expect(board.sameValues(2, [2, 2])).toEqual(undefined);
+  });
+  test("With 2 argument, 2 array with different length", () => {
+    expect(board.sameValues([2], [2, 2])).toEqual(false);
+  });
+  test("With 2 argument, 2 array with different values", () => {
+    expect(board.sameValues([2, 3], [2, 2])).toEqual(false);
+  });
+  test("With 2 argument, 2 array with same values", () => {
+    expect(board.sameValues([2, 3], [2, 3])).toEqual(true);
+  });
+});
