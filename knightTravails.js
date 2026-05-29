@@ -18,6 +18,17 @@ let mapBoard = [
   [1, 2, 3, 4, 5, 6, 7, 8],
 ];
 
+let dirTranslation = {
+  NNE: [1, 2],
+  NEE: [2, 1],
+  SEE: [2, -1],
+  SSE: [1, -2],
+  SSW: [-1, -2],
+  SWW: [-2, -1],
+  NWW: [-2, 1],
+  NNW: [-1, 2],
+};
+
 const board = {
   // Takes in 2 [2x1] arrays, first the starting position
   //  the second argument is the destination position
