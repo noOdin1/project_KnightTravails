@@ -1,21 +1,21 @@
 /* knightTravails.js */
 
-// This is a representation of the chessboard,
-//  the 0's are the white squares, and the 1's
-//   are the black squares. This can provide a
-//    check on the knight's movement, because every
-//     time the knight moves it switches from white
-//      to black square and vice-versa.
+// This is a representation of the mapBoard,
+//  the even numbered suqares are the white squares,
+//   and the odd numbered squares are the black squares.
+//    This can provide a check on the knight's movement, because every
+//      time the knight moves it switches from white
+//       to black square and vice-versa.
 
-let chessboard = [
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 1, 0],
+let mapBoard = [
+  [72, 73, 74, 75, 76, 77, 78, 79],
+  [61, 62, 63, 64, 65, 66, 67, 68],
+  [50, 51, 52, 53, 54, 55, 56, 57],
+  [41, 42, 43, 44, 45, 46, 47, 48],
+  [30, 31, 32, 33, 34, 35, 36, 37],
+  [21, 22, 23, 24, 25, 26, 27, 28],
+  [10, 11, 12, 13, 14, 15, 16, 17],
+  [1, 2, 3, 4, 5, 6, 7, 8],
 ];
 
 const board = {
