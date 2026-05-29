@@ -90,15 +90,18 @@ const board = {
     return [hyp, Math.abs(angleInDegrees + quadrant)];
   },
 
+
+
+  // Boundary checking
   validPos: (array) => {
     if (!Array.isArray(array)) {
       return undefined;
     }
     let valid = false;
     valid =
-      array[0] > chessboard[0].length - 1 || array[0] < 0
+      array[0] > mapBoard[0].length - 1 || array[0] < 0
         ? false
-        : array[1] > chessboard.length - 1 || array[1] < 0
+        : array[1] > mapBoard.length - 1 || array[1] < 0
           ? false
           : true;
     return valid;
