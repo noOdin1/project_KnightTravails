@@ -51,7 +51,45 @@ const board = {
           : "going right";
     console.log("Vertical direction: " + vertDir);
     console.log("Horizontal direction: " + horizDir);
+  getAngle: (pos1, pos2) => {
+    if (
+      pos1 === undefined ||
+      pos2 === undefined ||
+      !Array.isArray(pos1) ||
+      !Array.isArray(pos2)
+    ) {
+      return undefined;
+    }
+    let quadrant = 0;
+    let yDiff = pos2[0] - pos1[0];
+    let xDiff = pos2[1] - pos1[1];
+    let hyp = Math.sqrt(xDiff ** 2 + yDiff ** 2);
+    // format [y,x]
+    // get arcsine of opposite / hypotenuse, convert to degress and get the
+    //  absolute value
+    let angleInDegrees = Math.asin(yDiff / hyp) * (180 / Math.PI);
+    console.log("yDiff: " + yDiff);
+    console.log("xDiff: " + xDiff);
+    console.log("angleInDegrees: " + angleInDegrees);
+    if (xDiff < 0 && yDiff < 0) {
+      quadrant = 180;
+      return [hyp, Math.abs(angleInDegrees + quadrant)];
+    }
+    if (xDiff > 0 && yDiff > 0) {
+      quadrant = -360;
+      return [hyp, Math.abs(angleInDegrees + quadrant)];
+    }
+    if (xDiff > 0 && yDiff < 0) {
+      quadrant = 0;
+      return [hyp, Math.abs(angleInDegrees + quadrant)];
+    }
+    if (xDiff < 0 && yDiff > 0) {
+      quadrant = 90;
+      return [hyp, Math.abs(angleInDegrees + quadrant)];
+    }
+    return [hyp, Math.abs(angleInDegrees + quadrant)];
   },
+
   validPos: (array) => {
     if (!Array.isArray(array)) {
       return undefined;
