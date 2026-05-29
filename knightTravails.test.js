@@ -1,4 +1,5 @@
 /* knightTravails.test.js */
+import { board } from "./knightTravails.js";
 
 
 describe("validPos() test group", () => {
