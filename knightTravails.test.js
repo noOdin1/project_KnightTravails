@@ -1,6 +1,76 @@
 /* knightTravails.test.js */
 import { board } from "./knightTravails.js";
 
+describe.only("Test group for getAngle())", () => {
+  test("No arguments passed in", () => {
+    expect(board.getAngle()).toEqual(undefined);
+  });
+  test("getAngle() with 1 argument", () => {
+    expect(board.getAngle([1, 2])).toEqual(undefined);
+  });
+  test("getAngle()) with 2 arguments, 1st arg array and 2nd arg non array", () => {
+    expect(board.getAngle([1, 2], 5)).toEqual(undefined);
+  });
+  test("getAngle()) with 2 arguments, 1st arg non array and 2nd arg array", () => {
+    expect(board.getAngle(5, [1, 2])).toEqual(undefined);
+  });
+
+  // getAngle at corner points
+  test("getAngle()) with 2 arguments, 1st arg top lefthand corner 2nd arg same plane", () => {
+    console.log(board.getAngle([0, 0], [0, 5]));
+    expect(board.getAngle([0, 0], [0, 5])).toEqual([5, 0]);
+  });
+  test("getAngle()) with 2 arguments, 1st arg top lefthand corner 2nd arg lowered", () => {
+    let [hyp, deg] = board.getAngle([0, 0], [5, 2]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(5.385);
+    expect(parseFloat(deg.toFixed(3))).toEqual(291.801);
+  });
+  test("getAngle()) with 2 arguments, 1st arg top lefthand corner 2nd arg lowered", () => {
+    let [hyp, deg] = board.getAngle([0, 0], [2, 6]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(6.325);
+    expect(parseFloat(deg.toFixed(3))).toEqual(341.565);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom lefthand corner 2nd arg on the same plane", () => {
+    let [hyp, deg] = board.getAngle([7, 0], [7, 5]);
+    expect(board.getAngle([0, 0], [0, 5])).toEqual([5, 0]);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom lefthand corner 2nd arg slightly elevated", () => {
+    let [hyp, deg] = board.getAngle([7, 0], [5, 6]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(6.325);
+    expect(parseFloat(deg.toFixed(3))).toEqual(18.435);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom lefthand corner 2nd arg elevated over 45deg", () => {
+    let [hyp, deg] = board.getAngle([7, 0], [2, 3]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(5.831);
+    expect(parseFloat(deg.toFixed(3))).toEqual(59.036);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom righthand corner 2nd arg on the same plane", () => {
+    let [hyp, deg] = board.getAngle([7, 7], [7, 2]);
+    expect(board.getAngle([7, 7], [7, 2])).toEqual([5, 180]);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom righthand corner 2nd arg on the same plane, going up", () => {
+    let [hyp, deg] = board.getAngle([7, 7], [7, 2]);
+    expect(board.getAngle([7, 7], [1, 7])).toEqual([6, 90]);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom righthand corner 2nd arg slightly elevated", () => {
+    let [hyp, deg] = board.getAngle([7, 7], [5, 1]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(6.325);
+    expect(parseFloat(deg.toFixed(3))).toEqual(161.565);
+  });
+  test("getAngle()) with 2 arguments, 1st arg bottom righthand corner 2nd arg elevated over 45deg", () => {
+    let [hyp, deg] = board.getAngle([7, 7], [1, 6]);
+    expect(parseFloat(hyp.toFixed(3))).toEqual(6.083);
+    expect(parseFloat(deg.toFixed(3))).toEqual(99.462);
+  });
+  test.only("getAngle()) with 2 arguments, 1st arg top righthand corner 2nd arg on the same plane, going down", () => {
+    let [hyp, deg] = board.getAngle([0, 7], [1, 7]);
+    expect(board.getAngle([0, 7], [1, 7])).toEqual([6, 270]);
+  });
+  test.only("getAngle()) with 2 arguments, 1st arg top righthand corner 2nd arg on the same plane, going left", () => {
+    let [hyp, deg] = board.getAngle([0, 7], [0, 1]);
+    expect(board.getAngle([0, 7], [0, 1])).toEqual([6, 180]);
+  });
+});
 
 describe("validPos() test group", () => {
   test("No arg passed in", () => {
