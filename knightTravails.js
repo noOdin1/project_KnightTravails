@@ -68,9 +68,6 @@ const board = {
     // get arcsine of opposite / hypotenuse, convert to degress and get the
     //  absolute value
     let angleInDegrees = Math.asin(yDiff / hyp) * (180 / Math.PI);
-    console.log("yDiff: " + yDiff);
-    console.log("xDiff: " + xDiff);
-    console.log("angleInDegrees: " + angleInDegrees);
     if (xDiff < 0 && yDiff < 0) {
       quadrant = 180;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
@@ -87,8 +84,6 @@ const board = {
       quadrant = 90;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
-    return [hyp, Math.abs(angleInDegrees + quadrant)];
-  },
 
 
 
