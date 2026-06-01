@@ -197,6 +197,18 @@ const board = {
     // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
   },
 
+  movePos: (arr, knightMove) => {
+    return arr.map((x, idx) => {
+      console.log(
+        "x: " +
+          x +
+          ", dirTranslation[knightMove][idx]: " +
+          dirTranslation[knightMove][idx],
+      );
+      return x + dirTranslation[knightMove][idx];
+    });
+  },
+
 };
 
 export { board, dirTranslation, mapBoard };
