@@ -14,48 +14,71 @@ import { Tree } from "./binary_search_tree.js";
   console.log("mapBoard[0][0]: " + mapBoard[0][0]);
   console.log("mapBoard[0][0]: " + mapBoard[2][6]);
 
-  let x1;
-  let y1;
-  let x2;
-  let y2;
-  let [hyp, deg] = board.getAngle([0, 0], [2, 6]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[0][0]: " + mapBoard[0][0]);
-  console.log("mapBoard[2][6]: " + mapBoard[2][6]);
-  [hyp, deg] = board.getAngle([0, 7], [0, 1]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[0][7]: " + mapBoard[0][7]);
-  console.log("mapBoard[0][1]: " + mapBoard[0][1]);
-  [hyp, deg] = board.getAngle([7, 0], [7, 5]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[7][0]: " + mapBoard[7][0]);
-  console.log("mapBoard[7][5]: " + mapBoard[7][5]);
-  [hyp, deg] = board.getAngle([7, 7], [5, 2]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[7][7]: " + mapBoard[7][7]);
-  console.log("mapBoard[5][2]: " + mapBoard[5][2]);
-  [hyp, deg] = board.getAngle([0, 0], [5, 2]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[0][0]: " + mapBoard[0][0]);
-  console.log("mapBoard[5][2]: " + mapBoard[5][2]);
-  [hyp, deg] = board.getAngle([0, 0], [2, 6]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[0][0]: " + mapBoard[0][0]);
-  console.log("mapBoard[2][6]: " + mapBoard[2][6]);
-  y1 = 7;
-  x1 = 0;
-  y2 = 5;
-  x2 = 6;
-  [hyp, deg] = board.getAngle([y1, x1], [y2, x2]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[7][0]: " + mapBoard[y1][x1]);
-  console.log("mapBoard[7][5]: " + mapBoard[y2][x2]);
-  y1 = 0;
-  x1 = 7;
-  y2 = 6;
-  x2 = 7;
-  [hyp, deg] = board.getAngle([y1, x1], [y2, x2]);
-  console.log("getAngle1 result, hyp: " + hyp + ", deg: " + deg);
-  console.log("mapBoard[7][0]: " + mapBoard[y1][x1]);
-  console.log("mapBoard[7][5]: " + mapBoard[y2][x2]);
+  console.log("new calculation");
+  let y1 = 1;
+  let x1 = 6;
+  let y2 = 0;
+  let x2 = 7;
+  let tmpPos1 = [y1, x1];
+  let tmpPos2 = [y2, x2];
+  let direction1;
+  let tmpArr = [tmpPos1];
+
+  let count = 0;
+  while (!board.sameValues(tmpPos1, tmpPos2) && count < 16) {
+    let direction1 = board.dir(tmpPos1, tmpPos2);
+    // Diversion
+    tmpArr.forEach((x) => {
+      if (board.sameValues(board.movePos(tmpPos1, direction1), x)) {
+        direction1 = board.divert90(direction1);
+      }
+    });
+    if (board.validPos(board.movePos(tmpPos1, direction1))) {
+      tmpPos1 = board.movePos(tmpPos1, direction1);
+    } else {
+      // search for a valid position to move to
+      // let altPos1 = board.movePos(tmpPos1, direction1);
+      // for (const dirValue of Object.values(dirTranslation)) {
+      // let altPos1;
+      let found = false;
+      let tmpDir;
+      Object.keys(dirTranslation).forEach((key) => {
+        console.log("direction: " + key);
+        if (board.validPos(board.movePos(tmpPos1, key)) && !found) {
+          // altPos1 = board.movePos(tmpPos1, key);
+          tmpDir = key;
+          found = true;
+        }
+      });
+      tmpPos1 = board.movePos(tmpPos1, tmpDir);
+      console.log(
+        "Direction: " +
+          direction1 +
+          ", tmpPos: " +
+          tmpPos1 +
+          ", oriPos: " +
+          mapBoard[y1][x1] +
+          ", newPos: " +
+          mapBoard[tmpPos1[0]][tmpPos1[1]] +
+          ", destPos: " +
+          mapBoard[y2][x2],
+      );
+    }
+    console.log(
+      "Direction: " +
+        direction1 +
+        ", tmpPos: " +
+        tmpPos1 +
+        ", oriPos: " +
+        mapBoard[y1][x1] +
+        ", newPos: " +
+        mapBoard[tmpPos1[0]][tmpPos1[1]] +
+        ", destPos: " +
+        mapBoard[y2][x2] +
+        ", count: " +
+        count++,
+    );
+    tmpArr.push(tmpPos1);
+    console.dir(tmpArr);
+  }
 })();
