@@ -33,24 +33,8 @@ const board = {
   // Takes in 2 [2x1] arrays, first the starting position
   //  the second argument is the destination position
   knightMoves: (currentArray, destArray) => {
-    console.dir(currentArray);
-    console.dir(destArray);
     // Determine the vertical direction, up or down that
     //  this knight should take
-    let vertDir =
-      currentArray[0] == destArray[0]
-        ? "same row"
-        : currentArray[0] > destArray[0]
-          ? "going down"
-          : "going up";
-    let horizDir =
-      currentArray[1] == destArray[1]
-        ? "same column"
-        : currentArray[1] > destArray[1]
-          ? "going left"
-          : "going right";
-    console.log("Vertical direction: " + vertDir);
-    console.log("Horizontal direction: " + horizDir);
   getAngle: (pos1, pos2) => {
     if (
       pos1 === undefined ||
