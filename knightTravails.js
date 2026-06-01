@@ -19,14 +19,14 @@ let mapBoard = [
 ];
 
 let dirTranslation = {
-  NNE: [1, 2],
-  NEE: [2, 1],
-  SEE: [2, -1],
-  SSE: [1, -2],
-  SSW: [-1, -2],
-  SWW: [-2, -1],
-  NWW: [-2, 1],
-  NNW: [-1, 2],
+  NNE: [-2, 1],
+  NEE: [-1, 2],
+  SEE: [1, 2],
+  SSE: [2, 1],
+  SSW: [-2, -1],
+  SWW: [-1, -2],
+  NWW: [1, -2],
+  NNW: [2, -1],
 };
 
 const board = {
