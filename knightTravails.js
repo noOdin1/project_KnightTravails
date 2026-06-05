@@ -41,6 +41,8 @@ let dirTranslation = {
 
 function travellingKnight() {
   let bst = new Tree();
+
+  function getAngle(pos1, pos2) {
     if (
       pos1 === undefined ||
       pos2 === undefined ||
