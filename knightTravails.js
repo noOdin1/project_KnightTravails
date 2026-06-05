@@ -96,19 +96,19 @@ function travellingKnight() {
     }
 
     if (xDiff == 0 && pos1[1] == 0 && pos1[0] < pos2[0]) {
-      quadrant = 271;
+      quadrant = 269;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
     if (xDiff == 0 && pos1[1] == 0 && pos1[0] > pos2[0]) {
       quadrant = 89;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
-    if (xDiff == 0 && pos1[1] == 7 && pos1[1] < pos2[1]) {
-      quadrant = 269;
+    if (xDiff == 0 && pos1[1] == 7 && pos1[0] < pos2[0]) {
+      quadrant = 91;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
-    if (xDiff == 0 && pos1[1] == 7 && pos1[1] > pos2[1]) {
-      quadrant = 91;
+    if (xDiff == 0 && pos1[1] == 7 && pos1[0] > pos2[0]) {
+      quadrant = 271;
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
 
