@@ -116,7 +116,7 @@ function travellingKnight() {
   }
 
   // Boundary checking
-  validPos: (array) => {
+  function validPos(array) {
     if (!Array.isArray(array)) {
       return undefined;
     }
@@ -128,24 +128,24 @@ function travellingKnight() {
           ? false
           : true;
     return valid;
-  },
+  }
 
-  sameValues: (arr1, arr2) => {
-    if (arr1 === undefined || arr2 === undefined) {
-      return undefined;
-    }
+  // compares the value of 2 arrays, arrays must be the same size
+  const arrValComp = (arr1, arr2) => {
     if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
       return undefined;
     }
     if (arr1.length != arr2.length) {
-      return false;
+      return undefined;
     }
-    let res = true;
-    arr1.map((x, idx) => {
-      if (x != arr2[idx]) {
-        res = false;
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] != arr2[i]) {
+        return false;
       }
-    });
+    }
+    return true;
+  };
+
     return res;
     // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
   },
