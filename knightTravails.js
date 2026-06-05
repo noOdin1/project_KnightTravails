@@ -9,6 +9,7 @@ import { Tree } from "./binary_search_tree.js";
 //      time the knight moves it switches from white
 //       to black square and vice-versa.
 
+// prettier-ignore
 let mapBoard = [
   [72, 73, 74, 75, 76, 77, 78, 79],
   [61, 62, 63, 64, 65, 66, 67, 68],
