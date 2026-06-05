@@ -55,6 +55,7 @@ function travellingKnight() {
     let yDiff = pos2[0] - pos1[0];
     let xDiff = pos2[1] - pos1[1];
     let hyp = Math.sqrt(xDiff ** 2 + yDiff ** 2);
+    hyp = hyp.toFixed(3);
     // format [y,x]
     // get arcsine of opposite / hypotenuse, convert to degress and get the
     //  absolute value
@@ -111,6 +112,8 @@ function travellingKnight() {
       return [hyp, Math.abs(angleInDegrees + quadrant)];
     }
 
+    return [hyp, undefined];
+  }
     // return [hyp, Math.abs(angleInDegrees + quadrant)];
     return [undefined, undefined];
   },
