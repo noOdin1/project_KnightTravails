@@ -114,63 +114,6 @@ function travellingKnight() {
 
     return [hyp, undefined];
   }
-    // return [hyp, Math.abs(angleInDegrees + quadrant)];
-    return [undefined, undefined];
-  },
-
-  dir: (curPos, destPos) => {
-    // The Math required to determine if the current position is withing
-    //  1 jump to the destPos
-    // if (parseFloat(hyp.toFixed(3)) == 2.236) {
-    //   console.log("magic distance found");
-    // }
-    // if (parseFloat(angleInDegrees.toFixed(3)) == 26.565) {
-    //   console.log("magic angle found");
-    // }
-    if (
-      curPos === undefined ||
-      destPos === undefined ||
-      !Array.isArray(curPos) ||
-      !Array.isArray(destPos)
-    ) {
-      return undefined;
-    }
-    let [hyp, angleInDegrees] = board.getAngle(curPos, destPos);
-    console.log(
-      "curPos: [" +
-        curPos +
-        "], destPos: [" +
-        destPos +
-        "], hyp: " +
-        hyp +
-        ", angleInDegrees: " +
-        angleInDegrees,
-    );
-    if (angleInDegrees >= 0 && angleInDegrees < 45) {
-      return "NEE";
-    }
-    if (angleInDegrees >= 45 && angleInDegrees < 90) {
-      return "NNE";
-    }
-    if (angleInDegrees >= 90 && angleInDegrees < 135) {
-      return "NNW";
-    }
-    if (angleInDegrees >= 135 && angleInDegrees < 180) {
-      return "NWW";
-    }
-    if (angleInDegrees >= 180 && angleInDegrees < 225) {
-      return "SWW";
-    }
-    if (angleInDegrees >= 225 && angleInDegrees < 270) {
-      return "SSW";
-    }
-    if (angleInDegrees >= 270 && angleInDegrees < 315) {
-      return "SSE";
-    }
-    if (angleInDegrees >= 315 && angleInDegrees < 360) {
-      return "SEE";
-    }
-  },
 
   // Boundary checking
   validPos: (array) => {
