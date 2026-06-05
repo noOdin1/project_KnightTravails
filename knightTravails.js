@@ -24,7 +24,7 @@ let mapBoard = [
   [ 21,  22,  23,  24,  25,  26,  27,  28],
   
   [ 10,  11,  12,  13,  14,  15,  16,  17],
-  
+
   [  1,   2,   3,   4,   5,   6,   7,   8],
 ];
 
@@ -39,13 +39,7 @@ let dirTranslation = {
   NNW: [2, -1],
 };
 
-const board = {
-  // Takes in 2 [2x1] arrays, first the starting position
-  //  the second argument is the destination position
-  knightMoves: (currentArray, destArray) => {
-    // Determine the vertical direction, up or down that
-    //  this knight should take
-  getAngle: (pos1, pos2) => {
+function travellingKnight() {
     if (
       pos1 === undefined ||
       pos2 === undefined ||
