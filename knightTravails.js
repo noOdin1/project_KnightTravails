@@ -1,4 +1,6 @@
 /* knightTravails.js */
+import { LinkedList } from "./linked_list.js";
+import { Tree } from "./binary_search_tree.js";
 
 // This is a representation of the mapBoard,
 //  the even numbered suqares are the white squares,
