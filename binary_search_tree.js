@@ -46,6 +46,10 @@ class Tree {
     );
   }
 
+  buildTreeAlt(array) {
+    this.rootNode = this.binarySearchTree(array);
+  }
+
   binarySearchTree(array) {
     if (array.length == 0) {
       return null;
