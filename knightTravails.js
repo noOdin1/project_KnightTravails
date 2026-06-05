@@ -40,6 +40,7 @@ let dirTranslation = {
 };
 
 function travellingKnight() {
+  let bst = new Tree();
     if (
       pos1 === undefined ||
       pos2 === undefined ||
