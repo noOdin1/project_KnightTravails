@@ -230,6 +230,10 @@ function travellingKnight() {
       }
 
       if (returnSquare(startPos) == returnSquare(destPos)) {
+        // if there's any nodes being blocked, remove them
+        if (blocked.length != 0) {
+          tmpMovement.shift();
+        }
         return tmpMovement.map((x) => {
           return returnSquare(x);
         });
