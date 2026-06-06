@@ -180,6 +180,17 @@ function travellingKnight() {
         }
       }
 
+      // NOTE: This block will look for a new space. The very
+      //       first square that is not in it's registered moves
+      //       will be the square for next movement.
+      for (let i = 0; i < possibleMoves.length; i++) {
+        if (isPosNew(possibleMoves[i], tmpMovement)) {
+          startPos = possibleMoves[i];
+          tmpMovement.push(startPos);
+          break;
+        }
+      }
+
     }
   }
 
