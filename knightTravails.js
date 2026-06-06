@@ -175,6 +175,10 @@ function travellingKnight() {
     bst.buildTreeAlt(tmpArray);
   }
 
+  function printMappedMoves() {
+    bst.prettyPrint();
+  }
+
     return res;
     // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
   },
