@@ -179,19 +179,19 @@ function travellingKnight() {
     bst.prettyPrint();
   }
 
-    return res;
-    // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
-  },
+  function findPossibleMoveFor(num) {
+    let tmpNode = bst.findAlt(num);
 
-  movePos: (arr, knightMove) => {
-    return arr.map((x, idx) => {
-      console.log(
-        "x: " +
-          x +
-          ", dirTranslation[knightMove][idx]: " +
-          dirTranslation[knightMove][idx],
-      );
-      return x + dirTranslation[knightMove][idx];
+    let node = tmpNode.val.head();
+    let res = [];
+    node = node.nextNode;
+    while (node != null) {
+      res.push(node.val);
+      node = node.nextNode;
+    }
+    return res;
+  }
+
   function returnSquare(arr) {
     return mapBoard[arr[0]][arr[1]];
   }
