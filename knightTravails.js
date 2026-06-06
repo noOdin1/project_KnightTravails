@@ -159,6 +159,14 @@ function travellingKnight() {
       // sort the square by distance to the destination
       possibleMoves = sortByDistance(possibleMoves, destPos);
 
+      // sort possibleMoves to direct the knight's movement
+      // NOTE:
+      //  Temporarily blocked out to test the distance block
+      //
+      // newKnight.returnSquare(startPos) > newKnight.returnSquare(destPos)
+      //   ? possibleMoves.reverse()
+      //   : possibleMoves.sort();
+
     }
   }
 
