@@ -191,6 +191,12 @@ function travellingKnight() {
         }
       }
 
+      if (returnSquare(startPos) == returnSquare(destPos)) {
+        return tmpMovement.map((x) => {
+          return returnSquare(x);
+        });
+      }
+      count++;
     }
   }
 
