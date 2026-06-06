@@ -167,6 +167,19 @@ function travellingKnight() {
       //   ? possibleMoves.reverse()
       //   : possibleMoves.sort();
 
+      for (let j = 0; j < firstOrderLinkToTarget.length; j++) {
+        // move to the square that is next to the destination
+        if (!isPosNew(firstOrderLinkToTarget[j], possibleMoves)) {
+          possibleMoves = [firstOrderLinkToTarget[j]];
+          break;
+        }
+        // move to the destination position if available
+        if (!isPosNew(destPos, possibleMoves)) {
+          possibleMoves = [destPos];
+          break;
+        }
+      }
+
     }
   }
 
