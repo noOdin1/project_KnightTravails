@@ -24,4 +24,11 @@ import { argv } from "node:process";
   let knight = travellingKnight();
   knight.createKnightMovementMap();
 
+  console.log(
+    "Knight moving from: " +
+      travellingKnight().returnSquare(startPos) +
+      ", to: " +
+      travellingKnight().returnSquare(destPos),
+  );
+
 })();
