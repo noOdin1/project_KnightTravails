@@ -41,6 +41,16 @@ let dirTranslation = {
 
 function travellingKnight() {
   let bst = new Tree();
+  let cornerBlock = {
+    72: [1, 1],
+    79: [1, 6],
+    1: [6, 1],
+    8: [6, 6],
+    16: [7, 7],
+    11: [7, 0],
+    67: [0, 7],
+    62: [0, 0],
+  };
 
   function getAngle(pos1, pos2) {
     if (
