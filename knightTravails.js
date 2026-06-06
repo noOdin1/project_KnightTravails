@@ -220,8 +220,31 @@ function travellingKnight() {
     return true;
   }
 
+  function sortByDistance(arr, dest) {
+    if (!Array.isArray(arr)) {
+      return undefined;
+    }
+    let tmpArr = [];
+    let tmpPos = {};
+
+    for (let i = 0; i < arr.length; i++) {
+      // sort possibleMoves according to the distance between
+      //  current positions and destination position
+      const [hyp, deg] = getAngle(arr[i], dest);
+      tmpPos[`${hyp}`] = arr[i];
+    }
+    // sort object by "keys"
+    const sorted = Object.keys(tmpPos)
+      .sort()
+      .reduce((obj, key) => {
+        obj[key] = tmpPos[key];
+        return obj;
+      }, {});
+    Object.keys(sorted).forEach((k) => {
+      tmpArr.push(sorted[k]);
     });
-  },
+    return tmpArr;
+  }
 
   return {
     getAngle,
