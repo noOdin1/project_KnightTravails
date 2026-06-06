@@ -153,6 +153,17 @@ function travellingKnight() {
     // search of destPos' possible movement points
     let firstOrderLinkToTarget = findPossibleMoveFor(returnSquare(destPos));
 
+    // NOTE:
+    // Block to get the links associated with the first link to dest
+    //  Might revisit
+    // let secondOrderLinkToTarget = [];
+    // let tmpArray = firstOrderLinkToTarget.forEach((x) => {
+    //   findPossibleMoveFor(returnSquare(x)).forEach((y) => {
+    //     secondOrderLinkToTarget.push(y);
+    //   });
+    // });
+    // secondOrderLinkToTarget = Array.from(new Set(secondOrderLinkToTarget));
+
     while (true) {
       let possibleMoves = findPossibleMoveFor(returnSquare(startPos));
 
