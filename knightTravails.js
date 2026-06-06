@@ -154,6 +154,11 @@ function travellingKnight() {
     let firstOrderLinkToTarget = findPossibleMoveFor(returnSquare(destPos));
 
     while (true) {
+      let possibleMoves = findPossibleMoveFor(returnSquare(startPos));
+
+      // sort the square by distance to the destination
+      possibleMoves = sortByDistance(possibleMoves, destPos);
+
     }
   }
 
