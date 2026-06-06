@@ -159,6 +159,10 @@ function travellingKnight() {
           dirTranslation[knightMove][idx],
       );
       return x + dirTranslation[knightMove][idx];
+  function returnSquare(arr) {
+    return mapBoard[arr[0]][arr[1]];
+  }
+
     });
   },
 
