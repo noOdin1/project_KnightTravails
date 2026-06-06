@@ -163,6 +163,17 @@ function travellingKnight() {
     return mapBoard[arr[0]][arr[1]];
   }
 
+  function returnArrayIndex(num) {
+    let multiples = Math.floor(num / 10);
+    let i = 0;
+    for (; i < mapBoard.length - 1; i++) {
+      if (mapBoard[7 - multiples][i] == num) {
+        break;
+      }
+    }
+    return [7 - multiples, i];
+  }
+
     });
   },
 
