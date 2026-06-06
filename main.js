@@ -15,5 +15,13 @@ import { argv } from "node:process";
   let startPos = JSON.parse(argv[2]);
   let destPos = JSON.parse(argv[3]);
 
+  // NOTE:
+  //  Now the following are the options to test this program:
+  //    1. sort the possible moves by the square value
+  //    2. sort the possible moves using distance calculation
+  //  Currently sort by distance calculation returns a shorter path
+
+  let knight = travellingKnight();
+  knight.createKnightMovementMap();
 
 })();
