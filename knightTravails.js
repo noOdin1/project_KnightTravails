@@ -148,6 +148,8 @@ function travellingKnight() {
 
   function movePos(startPos, destPos) {
     let count = 0;
+    let tmpMovement = [startPos];
+
   }
 
   // Create a map of possible knight moves on every square
