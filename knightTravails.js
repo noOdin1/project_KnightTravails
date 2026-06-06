@@ -174,6 +174,19 @@ function travellingKnight() {
     return [7 - multiples, i];
   }
 
+  function isPosNew(array, movedPositions) {
+    if (!Array.isArray(array)) {
+      return undefined;
+    }
+    for (let i = 0; i < movedPositions.length; i++) {
+      if (arrValComp(array, movedPositions[i])) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
     });
   },
 
