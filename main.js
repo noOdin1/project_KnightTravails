@@ -1,5 +1,9 @@
 /* main.js */
-import { board, dirTranslation, mapBoard } from "./knightTravails.js";
+import {
+  dirTranslation,
+  mapBoard,
+  travellingKnight,
+} from "./knightTravails.js";
 import { Tree } from "./binary_search_tree.js";
 
 (() => {
