@@ -197,6 +197,14 @@ function travellingKnight() {
       //   ? possibleMoves.reverse()
       //   : possibleMoves.sort();
 
+      // console.log(
+      //   "tmpMovement: " +
+      //     JSON.stringify(
+      //       tmpMovement.map((x) => {
+      //         return returnSquare(x);
+      //       }),
+      //     ),
+      // );
       for (let j = 0; j < firstOrderLinkToTarget.length; j++) {
         // move to the square that is next to the destination
         if (!isPosNew(firstOrderLinkToTarget[j], possibleMoves)) {
