@@ -190,6 +190,19 @@ function travellingKnight() {
     });
   },
 
-};
+  return {
+    getAngle,
+    validPos,
+    movePos,
+    createKnightMovementMap,
+    printMappedMoves,
+    findPossibleMoveFor,
+    returnSquare,
+    returnArrayIndex,
+    arrValComp,
+    isPosNew,
+    sortByDistance,
+  };
+}
 
 export { board, dirTranslation, mapBoard };
