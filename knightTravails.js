@@ -150,6 +150,9 @@ function travellingKnight() {
     let count = 0;
     let tmpMovement = [startPos];
 
+    // search of destPos' possible movement points
+    let firstOrderLinkToTarget = findPossibleMoveFor(returnSquare(destPos));
+
   }
 
   // Create a map of possible knight moves on every square
