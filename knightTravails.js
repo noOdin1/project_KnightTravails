@@ -205,4 +205,4 @@ function travellingKnight() {
   };
 }
 
-export { board, dirTranslation, mapBoard };
+export { dirTranslation, mapBoard, travellingKnight };
