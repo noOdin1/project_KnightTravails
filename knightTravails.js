@@ -158,7 +158,6 @@ function travellingKnight() {
 
   function movePos(startPos, destPos) {
     let count = 0;
-    let tmpMovement = [startPos];
 
     // search of destPos' possible movement points
     let firstOrderLinkToTarget = findPossibleMoveFor(returnSquare(destPos));
@@ -173,6 +172,16 @@ function travellingKnight() {
     //   });
     // });
     // secondOrderLinkToTarget = Array.from(new Set(secondOrderLinkToTarget));
+
+    let tmpMovement = [];
+    let blocked = [];
+    Object.keys(cornerBlock).forEach((x) => {
+      if (arrValComp(destPos, returnArrayIndex(x))) {
+        blocked = cornerBlock[x];
+        tmpMovement.push(blocked);
+      }
+    });
+    tmpMovement.push(startPos);
 
     while (true) {
       let possibleMoves = findPossibleMoveFor(returnSquare(startPos));
