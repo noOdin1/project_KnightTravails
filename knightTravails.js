@@ -146,6 +146,35 @@ function travellingKnight() {
     return true;
   };
 
+
+  // Create a map of possible knight moves on every square
+  function createKnightMovementMap() {
+    let tmpArray = [];
+    for (let y = mapBoard.length - 1; y > -1; y--) {
+      for (let x = 0; x < mapBoard.length; x++) {
+        let newList = new LinkedList();
+        // This will be the first node on the Linked List
+        newList.append(mapBoard[y][x]);
+        Object.keys(dirTranslation).forEach((key) => {
+          if (
+            this.validPos([
+              y - dirTranslation[key][0],
+              x - dirTranslation[key][1],
+            ])
+          ) {
+            newList.append([
+              y - dirTranslation[key][0],
+              x - dirTranslation[key][1],
+            ]);
+          }
+        });
+        tmpArray.push(newList);
+      }
+    }
+    // NOTE: bst worked, new function introduced "buildTreeAlt()"
+    bst.buildTreeAlt(tmpArray);
+  }
+
     return res;
     // arr1.map((x, idx) => (x == arr2[idx] ? true : false));
   },
