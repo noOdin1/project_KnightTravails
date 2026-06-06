@@ -31,4 +31,14 @@ import { argv } from "node:process";
       travellingKnight().returnSquare(destPos),
   );
 
+  console.log("The knight has arrived via: ");
+  let tmpArr = knight.movePos(startPos, destPos);
+  // console.dir(testFactoryFunction(startPos, destPos));
+  console.dir(tmpArr);
+  console.dir(
+    tmpArr.map((x) => {
+      return travellingKnight().returnArrayIndex(x);
+    }),
+  );
+  // tmpKnight.printMappedMoves();
 })();
