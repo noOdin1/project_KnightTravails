@@ -16,7 +16,8 @@ The following are my designs for this project:
 | 3. Create a chessboard equivalent using array.<br>                                                                            | [done] :white_check_mark: |
 | 4. Devise a strategy of moving the knight towards its destination.<br>                                                        | [done] :white_check_mark: |
 </p>
-
+<hr>
+<h3>Mapping chessboard using 2x2 array in Javascript</h3>
 <p style="line-height: 1.5;">
 The following image is a representation of the chessboard using 8x8 array.<br>
 <img src="knight_travails_mapped_board.png" alt="array representation of chessboard"><br>
@@ -24,7 +25,8 @@ Since arrays are created starting from a top left corner of this image, therefor
 the top left is [0, 0], number 72 on this image.<br>
 
 </p>
-
+<hr>
+<h3>Adjacency Matrix with Linked List</h3>
 <p style="line-height: 1.5;">
 The following is the adjacency matrix:<br>
 <img src="knight_travails_adjacency_matrix.png" alt="adjacency matrix"><br>
@@ -35,7 +37,8 @@ linked list. The head of the node will be the originating square number.<br>
 Since the process of creating the adjacency matrix follows the numbering on the<br>
 mapped array, therefore the resulting array of linked list is sorted.<br>
 </p>
-
+<hr>
+<h3>Binary Search Tree</h3>
 <p style="line-height: 1.5;">
 The following is the binary search tree of the adjacency matrix:<br>
 <img src="knight_travails_mapped_moves.png" alt="binary search tree"><br>
@@ -57,3 +60,26 @@ Here are the list of strategies that I have tested for the knights movements:<br
 The 3rd option is the one with the best solution and the one that is currently<br>
 being used.<br>
 </p>
+
+<hr>
+<h3>Driver Script</h3>
+As usual the driver script will be 'main.js'. The following is an example of<br> 
+how to run the script:<br>
+<pre>
+  node main.js [0,0] [7,7]
+</pre>
+Example output:<br>  
+<pre>
+  Knight moving from: 1, to: 79
+  The knight has arrived via:
+  [
+     1, 22, 33, 54,
+    77, 56, 79
+  ]
+  [
+    [ 7, 0 ], [ 5, 1 ],
+    [ 4, 3 ], [ 2, 4 ],
+    [ 0, 5 ], [ 2, 6 ],
+    [ 0, 7 ]
+  ]
+</pre>
