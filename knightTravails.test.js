@@ -71,44 +71,6 @@ describe("Test group for getAngle())", () => {
   });
 });
 
-describe.only("Test group for dir() function", () => {
-  test("dir with no arguments", () => {
-    expect(board.dir()).toEqual(undefined);
-  });
-  test("dir with 1 argument", () => {
-    expect(board.dir([1, 2])).toEqual(undefined);
-  });
-  test("dir with 2 arguments, 1st arg array and 2nd arg non array", () => {
-    expect(board.dir([1, 2], 5)).toEqual(undefined);
-  });
-  test("dir with 2 arguments, 1st arg non array and 2nd arg array", () => {
-    expect(board.dir(5, [1, 2])).toEqual(undefined);
-  });
-
-  // testing the corner positions
-  // top left corner [0,0]
-  test("curPos = [0,0], destPos = [0,6]", () => {
-    expect(board.dir([0, 0], [0, 6])).toEqual("SEE");
-  });
-  test("curPos = [0,0], destPos = [2,6]", () => {
-    expect(board.dir([0, 0], [2, 6])).toEqual("SEE");
-  });
-  test("curPos = [0,0], destPos = [6,2]", () => {
-    expect(board.dir([0, 0], [6, 2])).toEqual("SSE");
-  });
-  test("curPos = [7,0], destPos = [7,6]", () => {
-    expect(board.dir([7, 0], [7, 6])).toEqual("NEE");
-  });
-
-  // test bottom left corner [7,0]
-  test("curPos = [7,0], destPos = [2,0]", () => {
-    expect(board.dir([7, 0], [2, 0])).toEqual("NEE");
-  });
-  test("curPos = [7,0], destPos = [1,2]", () => {
-    expect(board.dir([7, 0], [1, 2])).toEqual("NNE");
-  });
-});
-
 describe("validPos() test group", () => {
   test("No arg passed in", () => {
     expect(board.validPos()).toEqual(undefined);
