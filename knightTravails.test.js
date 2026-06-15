@@ -1,5 +1,5 @@
 /* knightTravails.test.js */
-import { board } from "./knightTravails.js";
+import { travellingKnight } from "./knightTravails.js";
 
 describe("Test group for getAngle())", () => {
   test("No arguments passed in", () => {
