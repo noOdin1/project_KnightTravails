@@ -140,21 +140,6 @@ function travellingKnight() {
     return valid;
   }
 
-  // compares the value of 2 arrays, arrays must be the same size
-  const arrValComp = (arr1, arr2) => {
-    if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
-      return undefined;
-    }
-    if (arr1.length != arr2.length) {
-      return undefined;
-    }
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] != arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  };
 
   function movePos(startPos, destPos) {
     let count = 0;
