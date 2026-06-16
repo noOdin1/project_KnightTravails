@@ -140,6 +140,16 @@ function travellingKnight() {
     return valid;
   }
 
+  // const arrayCheck = (arr1, arr2) => {
+  const sameArrayValues = (arr1, arr2) =>
+    arr1 === undefined ||
+    arr2 === undefined ||
+    arr1 === null ||
+    arr2 === null ||
+    !Array.isArray(arr1) ||
+    !Array.isArray(arr2)
+      ? undefined
+      : arr1.toString() === arr2.toString();
 
   function movePos(startPos, destPos) {
     let count = 0;
@@ -161,7 +171,8 @@ function travellingKnight() {
     let tmpMovement = [];
     let blocked = [];
     Object.keys(cornerBlock).forEach((x) => {
-      if (arrValComp(destPos, returnArrayIndex(x))) {
+      // if (arrValComp(destPos, returnArrayIndex(x))) {
+      if (sameArrayValues(destPos, returnArrayIndex(x))) {
         blocked = cornerBlock[x];
         tmpMovement.push(blocked);
       }
@@ -292,7 +303,7 @@ function travellingKnight() {
       return undefined;
     }
     for (let i = 0; i < movedPositions.length; i++) {
-      if (arrValComp(array, movedPositions[i])) {
+      if (sameArrayValues(array, movedPositions[i])) {
         return false;
       }
     }
@@ -335,9 +346,9 @@ function travellingKnight() {
     findPossibleMoveFor,
     returnSquare,
     returnArrayIndex,
-    arrValComp,
     isPosNew,
     sortByDistance,
+    sameArrayValues,
   };
 }
 
