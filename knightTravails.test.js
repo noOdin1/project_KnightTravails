@@ -140,7 +140,7 @@ describe.only("validPos() test group", () => {
   });
 });
 
-describe.only("Tests for arrValComp()", () => {
+describe.only("Tests for sameArrayValues()", () => {
   let tk;
   beforeEach(() => {
     // before each test, reset tmpList to a new empty Hash Set
@@ -148,30 +148,30 @@ describe.only("Tests for arrValComp()", () => {
   });
 
   test("No arguments", () => {
-    expect(tk.arrValComp()).toEqual(undefined);
+    expect(tk.sameArrayValues()).toEqual(undefined);
   });
   test("With only 1 argument", () => {
-    expect(tk.arrValComp(4)).toEqual(undefined);
+    expect(tk.sameArrayValues(4)).toEqual(undefined);
   });
   test("With only 1 argument, array with 2 elem", () => {
-    expect(tk.arrValComp([2, 2])).toEqual(undefined);
+    expect(tk.sameArrayValues([2, 2])).toEqual(undefined);
   });
   test("With 2 argument, 2 numbers", () => {
-    expect(tk.arrValComp(2, 3)).toEqual(undefined);
+    expect(tk.sameArrayValues(2, 3)).toEqual(undefined);
   });
   test("With 2 argument, 1 array with 2 elem and a number", () => {
-    expect(tk.arrValComp([2, 2], 4)).toEqual(undefined);
+    expect(tk.sameArrayValues([2, 2], 4)).toEqual(undefined);
   });
   test("With 2 argument, 1 array with 2 elem and a number", () => {
-    expect(tk.arrValComp(2, [2, 2])).toEqual(undefined);
+    expect(tk.sameArrayValues(2, [2, 2])).toEqual(undefined);
   });
   test("With 2 argument, 2 array with different length", () => {
-    expect(tk.arrValComp([2], [2, 2])).toEqual(undefined);
+    expect(tk.sameArrayValues([2], [2, 2])).toEqual(false);
   });
   test("With 2 argument, 2 array with different values", () => {
-    expect(tk.arrValComp([2, 3], [2, 2])).toEqual(false);
+    expect(tk.sameArrayValues([2, 3], [2, 2])).toEqual(false);
   });
   test("With 2 argument, 2 array with same values", () => {
-    expect(tk.arrValComp([2, 3], [2, 3])).toEqual(true);
+    expect(tk.sameArrayValues([2, 3], [2, 3])).toEqual(true);
   });
 });
