@@ -140,32 +140,38 @@ describe.only("validPos() test group", () => {
   });
 });
 
-describe("Tests for sameValues()", () => {
+describe.only("Tests for arrValComp()", () => {
+  let tk;
+  beforeEach(() => {
+    // before each test, reset tmpList to a new empty Hash Set
+    tk = travellingKnight();
+  });
+
   test("No arguments", () => {
-    expect(board.sameValues()).toEqual(undefined);
+    expect(tk.arrValComp()).toEqual(undefined);
   });
   test("With only 1 argument", () => {
-    expect(board.sameValues(4)).toEqual(undefined);
+    expect(tk.arrValComp(4)).toEqual(undefined);
   });
   test("With only 1 argument, array with 2 elem", () => {
-    expect(board.sameValues([2, 2])).toEqual(undefined);
+    expect(tk.arrValComp([2, 2])).toEqual(undefined);
   });
   test("With 2 argument, 2 numbers", () => {
-    expect(board.sameValues(2, 3)).toEqual(undefined);
+    expect(tk.arrValComp(2, 3)).toEqual(undefined);
   });
   test("With 2 argument, 1 array with 2 elem and a number", () => {
-    expect(board.sameValues([2, 2], 4)).toEqual(undefined);
+    expect(tk.arrValComp([2, 2], 4)).toEqual(undefined);
   });
   test("With 2 argument, 1 array with 2 elem and a number", () => {
-    expect(board.sameValues(2, [2, 2])).toEqual(undefined);
+    expect(tk.arrValComp(2, [2, 2])).toEqual(undefined);
   });
   test("With 2 argument, 2 array with different length", () => {
-    expect(board.sameValues([2], [2, 2])).toEqual(false);
+    expect(tk.arrValComp([2], [2, 2])).toEqual(undefined);
   });
   test("With 2 argument, 2 array with different values", () => {
-    expect(board.sameValues([2, 3], [2, 2])).toEqual(false);
+    expect(tk.arrValComp([2, 3], [2, 2])).toEqual(false);
   });
   test("With 2 argument, 2 array with same values", () => {
-    expect(board.sameValues([2, 3], [2, 3])).toEqual(true);
+    expect(tk.arrValComp([2, 3], [2, 3])).toEqual(true);
   });
 });
